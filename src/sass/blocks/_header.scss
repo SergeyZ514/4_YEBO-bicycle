@@ -1,0 +1,122 @@
+.header {
+   position: absolute;
+   width: 100%;
+   z-index: 50;
+   left: 0;
+   top: 35px;
+   &_row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 85px;
+   }
+
+   &__menu {
+   }
+
+   &__logo {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+      z-index: 6;
+   }
+}
+.menu {
+   &__icon {
+      display: none;
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      z-index: 6;
+
+      .hamburger {
+         width: 30px;
+         height: 30px;
+         position: relative;
+         .bar {
+            display: block;
+            width: 100%;
+            height: 4px;
+            background-color: $main_color;
+            border-radius: 4px;
+            transition: all 0.4s ease-in-out;
+            position: absolute;
+         }
+         .bar1 {
+            top: 0;
+         }
+         .bar2,
+         .bar3 {
+            top: 50%;
+            transform: translateY(-50%);
+         }
+         .bar4 {
+            bottom: 0;
+         }
+         &.active {
+            .bar1 {
+               transform: rotate(45deg);
+               transform-origin: 5%;
+               width: 41px;
+            }
+            .bar2 {
+               transform: translateX(-40px);
+               background-color: transparent;
+            }
+            .bar3 {
+               transform: translateX(40px);
+               background-color: transparent;
+            }
+            .bar4 {
+               transform-origin: 5%;
+               transform: rotate(-45deg);
+               width: 41px;
+            }
+         }
+      }
+   }
+
+   &__body {
+   }
+
+   &__list {
+      display: flex;
+      li {
+         position: relative;
+         padding: 0 37.5px 0 37.5px;
+         &:nth-child(2) {
+            padding: 0 110px 0 37.5px;
+         }
+         &:nth-child(3) {
+            padding: 0 37.5px 0 110px;
+         }
+         &:first-child,
+         &:nth-child(3) {
+            &::after {
+               content: '';
+               width: 3px;
+               height: 3px;
+               background-color: rgb(77, 73, 89);
+               border-radius: 50%;
+               position: absolute;
+               right: 0;
+               top: 70%;
+            }
+         }
+      }
+   }
+
+   &__link {
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 2.6px;
+      color: rgb(77, 73, 89);
+      text-transform: uppercase;
+      &:hover {
+         text-decoration: underline;
+      }
+   }
+   .icon-menu {
+   }
+}
